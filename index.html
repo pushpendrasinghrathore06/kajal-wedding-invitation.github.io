@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#24100f">
+<title>Shubh Vivah | A Royal Rajputi Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+<style>
+:root{
+ --wine:#4b101c;--wine2:#6e1d2a;--maroon:#2a0d12;--gold:#d8b46a;--gold2:#f0d99b;
+ --ivory:#f8f0df;--cream:#efe2c9;--rose:#b87578;--sage:#68765c;--ink:#321d1b;
+ --serif:'Playfair Display',Georgia,serif;--display:'Cinzel',serif;--sans:'DM Sans',sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+button,a{font:inherit}button{cursor:pointer}
+.ornament{color:var(--gold);letter-spacing:.4em;font-size:12px}
+.kicker{font:600 10px var(--display);letter-spacing:.28em;text-transform:uppercase;color:var(--wine2)}
+.section-title{font:500 clamp(2rem,5vw,3.4rem) var(--serif);color:var(--wine);margin:.5rem 0 1rem}
+.gold-rule{width:86px;height:1px;background:var(--gold);margin:1.3rem auto;position:relative}
+.gold-rule:after{content:"✦";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--ivory);padding:0 9px;color:var(--gold);font-size:12px}
+#intro{position:fixed;inset:0;z-index:20;display:grid;place-items:center;overflow:hidden;background:
+ radial-gradient(ellipse at 50% 38%,#6c2730 0%,#3a1119 54%,#1b090d 100%);transition:opacity 1.15s ease,visibility 1.15s}
+#intro:before,#intro:after{content:"";position:absolute;inset:18px;border:1px solid rgba(216,180,106,.42);pointer-events:none}
+#intro:after{inset:27px;border:1px solid rgba(216,180,106,.18)}
+.intro-corner{position:absolute;color:var(--gold);font-size:clamp(35px,7vw,70px);opacity:.65}
+.intro-corner.tl{top:32px;left:34px}.intro-corner.tr{top:32px;right:34px;transform:scaleX(-1)}
+.intro-corner.bl{bottom:32px;left:34px;transform:scaleY(-1)}.intro-corner.br{bottom:32px;right:34px;transform:scale(-1)}
+.intro-copy{position:absolute;top:8%;text-align:center;color:var(--gold2);z-index:2}
+.intro-copy .hindi{font:30px 'Tiro Devanagari Hindi',serif;letter-spacing:.08em}
+.intro-copy p{font:10px var(--display);letter-spacing:.35em;margin:12px 0;color:#e8d2a2}
+.envelope-wrap{width:min(76vw,460px);aspect-ratio:1.38;position:relative;perspective:1200px;filter:drop-shadow(0 30px 35px #10040799);margin-top:70px}
+.envelope{position:absolute;inset:0;background:linear-gradient(135deg,#f5e8c9,#d8bd8a);border:2px solid var(--gold);overflow:visible}
+.envelope:before{content:"";position:absolute;inset:11px;border:1px solid #9c7845;opacity:.8;z-index:3;pointer-events:none}
+.env-back{position:absolute;inset:0;background:linear-gradient(145deg,#d6bd8e,#f1e4c5)}
+.env-left,.env-right,.env-bottom{position:absolute;inset:0}
+.env-left{background:linear-gradient(45deg,#c5a573,#ead7ac);clip-path:polygon(0 0,51% 51%,0 100%);z-index:2}
+.env-right{background:linear-gradient(315deg,#b99563,#e7d2a5);clip-path:polygon(100% 0,49% 51%,100% 100%);z-index:2}
+.env-bottom{background:linear-gradient(0deg,#c4a16d,#e9d4a6);clip-path:polygon(0 100%,50% 49%,100% 100%);z-index:4}
+.env-flap{position:absolute;inset:0;background:linear-gradient(160deg,#f1dfb7,#c9aa76);clip-path:polygon(0 0,100% 0,50% 57%);transform-origin:top;z-index:5;transition:transform 1.25s cubic-bezier(.2,.75,.2,1);backface-visibility:hidden}
+.env-flap:after{content:"";position:absolute;inset:13px 13px 42% 13px;border-top:1px solid #9c7845}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+.envelope.open{animation:envLift 1.2s ease forwards}
+@keyframes envLift{to{transform:translateY(14px) scale(.96);opacity:0}}
+.seal-button{position:absolute;z-index:8;left:50%;top:52%;transform:translate(-50%,-50%);width:108px;height:108px;border:0;border-radius:50%;background:radial-gradient(circle at 35% 28%,#9b3940,#5a111d 65%,#30080e);color:var(--gold2);box-shadow:0 0 0 5px #d7b878,0 0 0 8px #6c4928,0 9px 18px #21080c99;display:grid;place-items:center;transition:transform .25s,filter .25s}
+.seal-button:hover{transform:translate(-50%,-50%) scale(1.06);filter:brightness(1.15)}
+.seal-inner{width:82px;height:82px;border:1px solid #d8b46a;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.seal-inner .sun{font-size:25px;line-height:1}.seal-inner small{font:600 8px var(--display);letter-spacing:.14em}
+.intro-hint{position:absolute;bottom:9%;color:#f0d99b;text-align:center;font:10px var(--display);letter-spacing:.28em;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.5}}
+#intro.leaving{opacity:0;visibility:hidden;pointer-events:none}
+#invitation{opacity:0;visibility:hidden;transition:opacity 1.5s ease;position:relative}
+#invitation.visible{opacity:1;visibility:visible}
+.topbar{position:absolute;z-index:4;top:0;left:0;right:0;display:flex;justify-content:center;padding:22px}
+.topbar span{font:10px var(--display);letter-spacing:.3em;color:var(--gold2);border-bottom:1px solid #d8b46a88;padding-bottom:8px}
+.hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;padding:110px 20px 80px;color:#f8edda;background:
+ radial-gradient(ellipse at center,#67232d 0%,#42131d 54%,#220b10 100%)}
+.hero:before{content:"";position:absolute;inset:16px;border:1px solid #d8b46a88;pointer-events:none}
+.hero:after{content:"";position:absolute;inset:25px;border:1px solid #d8b46a33;pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:820px}
+.hero .hindi{font:clamp(23px,4vw,34px) 'Tiro Devanagari Hindi',serif;color:var(--gold2);margin-bottom:24px}
+.hero .invite-line{font:10px var(--display);letter-spacing:.32em;color:#e4cb98}
+.hero h1{font:500 clamp(2.8rem,8vw,6.6rem)/1.08 var(--serif);margin:22px 0;color:#fff2d9;text-shadow:0 5px 24px #170609}
+.hero h1 em{display:block;font-size:.58em;color:var(--gold2);font-weight:500;margin:8px 0}
+.hero .date-line{font:500 20px var(--display);letter-spacing:.24em;color:var(--gold2);margin-top:25px}
+.hero .venue-line{font:12px var(--serif);font-style:italic;color:#ead9bb;margin-top:12px}
+.hero .motif{font-size:36px;color:var(--gold);margin:28px 0 8px}
+.hero .scroll-note{font:9px var(--display);letter-spacing:.25em;color:#d8bd8d;margin-top:48px}
+.hero-frame{position:absolute;inset:45px 8%;border-left:1px solid #d8b46a44;border-right:1px solid #d8b46a44;pointer-events:none}
+.petal{position:fixed;top:-30px;z-index:8;pointer-events:none;color:#e6a2a2;opacity:.7;animation:fall linear forwards;text-shadow:0 1px 5px #4b101c55}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(620deg);opacity:.05}}
+.section{padding:100px 22px;position:relative;text-align:center;overflow:hidden}
+.section-inner{max-width:1080px;margin:auto}
+.countdown-section{background:linear-gradient(180deg,#f8f0df,#f2e5d2)}
+.countdown-grid{display:flex;justify-content:center;gap:clamp(10px,3vw,30px);margin:45px auto 25px;flex-wrap:wrap}
+.time-box{width:clamp(76px,15vw,130px);padding:19px 8px 15px;border:1px solid #c8a86d;background:#fffaf0;box-shadow:0 10px 30px #6b3d2010}
+.time-box strong{display:block;font:500 clamp(1.7rem,4vw,3rem) var(--serif);color:var(--wine)}
+.time-box span{font:9px var(--display);letter-spacing:.18em;color:#80664b}
+.lotus{width:min(210px,55vw);height:auto;margin:28px auto 0;display:block;animation:lotusFloat 4s ease-in-out infinite;filter:drop-shadow(0 12px 10px #a77d5b22)}
+@keyframes lotusFloat{50%{transform:translateY(-9px)}}
+.events-section{background:#3b1119;color:#f7ead1}
+.events-section .section-title{color:#f5e7cb}.events-section .kicker{color:var(--gold2)}
+.event-day{margin-top:52px}
+.event-day:first-of-type{margin-top:48px}
+.event-day-title{font:500 clamp(15px,2.8vw,18px) var(--display);letter-spacing:.18em;color:var(--gold2);margin:0 0 22px;text-align:center;text-transform:uppercase}
+.event-day-title:after{content:"";display:block;width:48px;height:1px;background:var(--gold);margin:12px auto 0;opacity:.7}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:0;text-align:left}
+.event-card{position:relative;padding:28px 24px 30px;min-height:190px;border:1px solid #d8b46a66;background:linear-gradient(145deg,#531923,#321016);transition:transform .3s,border-color .3s;display:flex;flex-direction:column}
+.event-card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.event-card .number{font:16px var(--display);color:var(--gold);letter-spacing:.2em}
+.event-card h3{font:500 24px var(--serif);color:#f6e8cd;margin:16px 0 9px}
+.event-card p{font-size:12px;line-height:1.7;color:#d9c6a8;margin:0}
+.event-card .event-icon{position:absolute;right:20px;top:18px;font-size:24px;color:#d8b46a77}
+.event-card .attire{margin-top:auto;padding-top:14px;font:500 14px var(--display);letter-spacing:.12em;color:var(--gold2);border-top:1px solid #d8b46a33;text-transform:uppercase}
+.event-card .attire span{font-weight:400;letter-spacing:.06em;color:#e8d2a2;text-transform:none}
+.venue-section{background:#efe2cb}
+.venue-card{max-width:850px;margin:42px auto 0;display:grid;grid-template-columns:1fr 1fr;background:#fff8eb;border:1px solid #c9a76a;box-shadow:0 18px 50px #57331b12;text-align:left}
+.venue-art{min-height:300px;display:grid;place-items:center;background:radial-gradient(circle,#f5e8cd,#dfc79f);position:relative;overflow:hidden}
+.venue-art:before{content:"";position:absolute;inset:18px;border:1px solid #9c7845;z-index:1;pointer-events:none}
+.venue-art img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.venue-info{padding:clamp(25px,5vw,50px);align-self:center}
+.venue-info h3{font:500 30px var(--serif);color:var(--wine);margin:10px 0}
+.venue-info p{font-size:13px;line-height:1.8;color:#70594a}
+.map-link{display:inline-block;margin-top:15px;padding:12px 20px;background:var(--wine);color:#f7e8c9;text-decoration:none;font:10px var(--display);letter-spacing:.15em;border:1px solid var(--gold);transition:background .2s}
+.map-link:hover{background:#762432}
+.rsvp-section{background:linear-gradient(135deg,#f7eedc,#ead9bd)}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(240px,320px));gap:18px;margin:45px auto 0;max-width:950px;justify-content:center}
+.contact-card{padding:28px 18px;background:#fff9ed;border:1px solid #c8a86d}
+.contact-card .symbol{font-size:27px;color:var(--wine)}
+.contact-card h3{font:500 21px var(--serif);color:var(--wine);margin:12px 0 6px}
+.contact-card p{font-size:12px;color:#79634e;line-height:1.7;margin:5px 0}
+.contact-card a{color:var(--wine);text-decoration:none;font-size:13px;font-weight:600}
+.footer{padding:34px 20px;background:#2b0c12;color:#d9c49d;text-align:center}
+.footer .hindi{font:22px 'Tiro Devanagari Hindi',serif;color:var(--gold2)}
+.footer p{font:9px var(--display);letter-spacing:.22em;margin:12px 0 0}
+@media(max-width:760px){
+ .events-grid{grid-template-columns:repeat(2,1fr)}.venue-card{grid-template-columns:1fr}.venue-art{min-height:220px}
+ .contact-grid{grid-template-columns:minmax(0,320px);justify-content:center}.section{padding:78px 18px}.intro-copy{top:10%}
+}
+@media(max-width:460px){
+ .events-grid{grid-template-columns:1fr}.event-card{min-height:170px}.envelope-wrap{width:82vw;margin-top:45px}
+ .seal-button{width:88px;height:88px}.seal-inner{width:68px;height:68px}.seal-inner .sun{font-size:20px}
+ .intro-copy .hindi{font-size:20px}.intro-copy p{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+.img-container {
+    max-width: 300px;         /* Limits the maximum size of the div */
+      width: 100%;              /* Allows it to shrink on smaller screens */
+      height: 200px;            /* Gives the div a fixed height */
+      margin: 20px auto;        /* Centers the container itself on the page */
+     
+      
+      /* 2. Position the image perfectly in the middle of the div */
+      display: flex;
+      justify-content: center;  /* Centers horizontally */
+      align-items: center;      /* Centers vertically */
+      overflow: hidden; 
+}
+.img-container img {
+    max-width: 100%;  /* Tells the image never to exceed the width of its parent div */
+    height: auto;     /* Maintains the correct aspect ratio during scaling */
+    display: block;   /* Prevents an extra baseline gap underneath the image */
+}
+</style>
+</head>
+<body>
+<audio id="bgMusic" loop preload="auto">
+ <source src="Din Shagna Da - Instrumental.mp3" type="audio/mpeg">
+</audio>
+<div id="intro" aria-label="Wedding invitation envelope">
+ <div class="intro-corner tl">❧</div><div class="intro-corner tr">❧</div><div class="intro-corner bl">❧</div><div class="intro-corner br">❧</div>
+ <div class="intro-copy"><div class="hindi">शुभ विवाह</div><p>AN INVITATION FROM THE RATHORE FAMILY</p></div>
+ <div class="envelope-wrap">
+  <div class="envelope" id="envelope">
+   <div class="env-back"></div><div class="env-left"></div><div class="env-right"></div><div class="env-bottom"></div><div class="env-flap"></div>
+   <button class="seal-button" id="openInvite" aria-label="Tap to open wedding invitation">
+    <span class="seal-inner"><span class="sun">✥</span><small>TAP TO OPEN</small></span>
+   </button>
+  </div>
+ </div>
+ <div class="intro-hint">A ROYAL CELEBRATION AWAITS YOU</div>
+</div>
+
+<main id="invitation">
+ <header class="hero" id="home">
+  <div class="topbar"><span>॥ श्री गणेशाय नमः ॥</span></div><div class="hero-frame"></div>
+  <div class="hero-content">
+   <div class="hindi">शुभ विवाह</div><div class="invite-line">WITH THE BLESSINGS OF OUR FAMILIES</div>
+   <div class="img-container"><img src="logo.png" alt=""></div>
+   <div class="motif">❧ ✥ ❧</div>
+   <h3><span id="brideName" style="font-family: serif;color:#e4cb98;text-shadow:0 5px 24px #170609">DR. KAJAL RATHORE</span></h3><h4><span id="bridefam" style="font-family: serif;color:#e4cb98;text-shadow:0 5px 24px #170609">SMT. MAMTA KANWAR - KU. MAHAVEER SINGH RATHORE</span></h4><em>&</em><br><h3><span id="groomName" style="font-family: serif;color:#e4cb98;text-shadow:0 5px 24px #170609">DR. PARAKRAM SINGH CHAUHAN</span></h3><h4><span id="groomfam" style="font-family: serif;color:#e4cb98;text-shadow:0 5px 24px #170609">SMT. BINDU SINGH - LT. DR. GAJENDRA SINGH CHAUHAN</span></h4></h3>
+   <div class="date-line" id="weddingDateText">2 DECEMBER 2026</div>
+   <div class="venue-line" id="heroVenue">A royal celebration at Labhgarh Palace & Resorts, Udaipur, Rajasthan</div>
+   <div class="motif">✧</div><div class="scroll-note">KINDLY JOIN US IN OUR CELEBRATION · SCROLL TO EXPLORE</div>
+  </div>
+ </header>
+
+ <section class="section countdown-section" id="countdown">
+  <div class="section-inner"><div class="kicker">THE COUNTDOWN BEGINS</div><h2 class="section-title">Until Our Forever</h2>
+   <div class="gold-rule"></div><p style="font:italic 15px var(--serif);color:#80664b">Every moment brings us closer to a beautiful beginning.</p>
+   <div class="countdown-grid" aria-live="polite">
+    <div class="time-box"><strong id="days">000</strong><span>DAYS</span></div><div class="time-box"><strong id="hours">00</strong><span>HOURS</span></div><div class="time-box"><strong id="minutes">00</strong><span>MINUTES</span></div><div class="time-box"><strong id="seconds">00</strong><span>SECONDS</span></div>
+   </div>
+   <svg class="lotus" viewBox="0 0 240 150" role="img" aria-label="Decorative lotus flower">
+    <g fill="#c77d83" stroke="#9c4d5b" stroke-width="1.2">
+     <path d="M120 128C70 98 83 44 120 10C157 44 170 98 120 128Z"/>
+     <path d="M119 128C48 116 36 74 56 42C92 58 113 91 119 128Z" fill="#d99599"/>
+     <path d="M121 128C192 116 204 74 184 42C148 58 127 91 121 128Z" fill="#d99599"/>
+     <path d="M118 129C55 142 20 119 16 88C59 84 94 104 118 129Z" fill="#e4a9a4"/>
+     <path d="M122 129C185 142 220 119 224 88C181 84 146 104 122 129Z" fill="#e4a9a4"/>
+    </g><path d="M120 128Q119 139 120 148" stroke="#71805e" stroke-width="4" fill="none"/><path d="M120 142Q91 126 76 142Q101 151 120 142M120 142Q149 126 164 142Q139 151 120 142" fill="#82906a" stroke="#64734f"/>
+    <circle cx="120" cy="91" r="8" fill="#e8c978"/>
+   </svg>
+  </div>
+ </section>
+
+ <section class="section events-section" id="events">
+  <div class="section-inner"><div class="kicker">A FESTIVAL OF LOVE & TRADITION</div><h2 class="section-title">Wedding Celebrations</h2><div class="gold-rule"></div>
+   <p style="font:italic 15px var(--serif);color:#d9c6a8">Join us for the cherished rituals, music and merriment.</p>
+
+   <div class="event-day">
+    <h3 class="event-day-title">Monday, 30 November 2026</h3>
+    <div class="events-grid">
+     <article class="event-card"><span class="number">03.15 PM</span><span class="event-icon">❋</span><h3>Ganesh Sthapana</h3><p>Seeking the blessings of Lord Ganesha for an auspicious beginning.</p><div class="attire">Attire · <span>Traditional yellow ethnic wear</span></div></article>
+     <article class="event-card"><span class="number">07.15 PM</span><span class="event-icon">❋</span><h3>Bindori</h3><p>Before the big day arrived, we danced the night away! Join us as we celebrate the colorful traditions of Bindori to bless them for their new beginnings</p><div class="attire">Attire · <span>Vibrant traditional & festive ethnic</span></div></article>
+    </div>
+   </div>
+
+   <div class="event-day">
+    <h3 class="event-day-title">Tuesday, 1 December 2026</h3>
+    <div class="events-grid">
+     <article class="event-card"><span class="number">10.15 AM</span><span class="event-icon">♫</span><h3>Haldi &amp; Pithi</h3><p>Traditional turmeric ceremony with blessings, songs and joyful rituals.</p><div class="attire">Attire · <span>Ethnic Shades Of Pink</span></div></article>
+     <article class="event-card"><span class="number">03.15 PM</span><span class="event-icon">✿</span><h3>Mehendi</h3><p>An afternoon of intricate henna, colours, laughter and family traditions.</p><div class="attire">Attire · <span>Let's Blend With The Green Colours Of Henna and Love</span></div></article>
+     <article class="event-card"><span class="number">06.15 PM</span><span class="event-icon">✧</span><h3>Sangeet Sandhya</h3><p>A royal evening of folk music, Ghoomar, dance and celebration.</p><div class="attire">Attire · <span>Elegant Ethnic and Traditional</span></div></article>
+    </div>
+   </div>
+
+   <div class="event-day">
+    <h3 class="event-day-title">Wednesday, 2 December 2026</h3>
+    <div class="events-grid">
+     <article class="event-card"><span class="number">10.15 AM</span><span class="event-icon">♕</span><h3>Mayra</h3><p>A beautiful bond of a brother's love and a sister's blessings. We cordially invite you to celebrate the traditional Mayra (Bhaat) Ceremony of our beloved Dr. Kajal Rathore.</p><div class="attire">Attire · <span>Traditonal Bandhej</span></div></article>
+     <article class="event-card"><span class="number">05.15 PM</span><span class="event-icon">♕</span><h3>Baraat &amp; Toran</h3><p>Welcome the groom's procession with the warmth of Rajputi tradition.</p></article>
+     <article class="event-card"><span class="number">08.00 PM</span><span class="event-icon">♕</span><h3>Marriage Banquet (Prati Bhoj)</h3><p>With joyful hearts, we request the honor of your presence at the reception dinner following the marriage ceremony.</p></article>
+     <article class="event-card"><span class="number">Shubh-Lagan Anusar</span><span class="event-icon">ॐ</span><h3>Varmala &amp; Pheras</h3><p>Witness the sacred vows and seven steps as two families become one.</p></article>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <section class="section venue-section" id="venue">
+  <div class="section-inner"><div class="kicker">THE ROYAL ADDRESS</div><h2 class="section-title">The Wedding Venue</h2><div class="gold-rule"></div>
+   <div class="venue-card"><div class="venue-art"><img src="https://q-xx.bstatic.com/xdata/images/hotel/1200x630/616756889.jpg?k=f4e66d72e1f06da296873ce9031d4dfdbd414f3de076687738df1657b7d10ec3&o=" alt="Labhgarh Palace & Resorts, Udaipur" loading="lazy"></div><div class="venue-info"><div class="kicker">A PLACE TO CELEBRATE</div><h3 id="venueName">The Labhgarh Palace & Resorts</h3><p id="venueAddress">Udaipur, Rajasthan, India<br>Venue address to be updated</p><p>We look forward to welcoming you for an unforgettable celebration filled with warmth, tradition and royal hospitality.</p><a class="map-link" id="mapLink" href="https://www.google.com/maps/place/Labh+Garh+Palace+Resort+%26+Spa/@24.6968101,73.7315151,17z/data=!3m1!4b1!4m9!3m8!1s0x3967e3c365a313a7:0x5bc46179026900a4!5m2!4m1!1i2!8m2!3d24.6968101!4d73.73409!16s%2Fg%2F1hhjslg5l?entry=ttu&g_ep=EgoyMDI2MTEwMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">VIEW LOCATION ↗</a></div></div>
+  </div>
+ </section>
+
+ <section class="section rsvp-section" id="rsvp">
+  <div class="section-inner"><div class="kicker">YOUR PRESENCE IS OUR PRESENT</div><h2 class="section-title">With Warm Regards</h2><div class="gold-rule"></div>
+   <p style="font:italic 15px var(--serif);color:#80664b">For details and assistance, please connect with our family or wedding team.</p>
+   <div class="contact-grid">
+    <div class="contact-card"><div class="symbol">♔</div><h3>Family · Bride</h3><p>Family contact</p><a href="tel:+919799998352">+91 97999 98352</a></div>
+    <div class="contact-card"><div class="symbol">✧</div><h3>Event Manager</h3><p>Wedding coordination</p><a href="tel:+919829172048">+91 98291 72048</a></div>
+   </div>
+  </div>
+ </section>
+ <footer class="footer"><div class="hindi">सादर आमंत्रित</div><p>WITH LOVE, BLESSINGS & ROYAL HOSPITALITY</p><p style="letter-spacing:.08em;font-family:var(--sans);font-size:10px;margin-top:18px">॥ शुभम भवतु ॥</p></footer>
+</main>
+
+<script>
+/* ==========================================================
+   PERSONALISE YOUR INVITATION HERE
+   Use weddingDate in YYYY-MM-DDTHH:MM:SS format (local time).
+   ========================================================== */
+const weddingDetails = {
+  bride: "DR. KAJAL RATHORE",
+  bridefam: "SMT. MAMTA KANWAR - KU. MAHAVEER SINGH RATHORE",
+  groomfam: "SMT. BINDU SINGH - LT. DR. GAJENDRA SINGH CHAUHAN",
+  groom: "DR. PARAKRAM SINGH CHAUHAN",
+  weddingDate: "2026-12-02T19:00:00",
+  venueShort: "A royal celebration at Labhgarh Palace & Resorts, Udaipur, Rajasthan",
+  venueName: "The Labhgarh Palace & Resorts",
+  venueAddress: "Udaipur, Rajasthan, India ",
+  mapQuery: "Labhgarh Palace and Resorts, Udaipur, Rajasthan",
+  familyBridePhone: "+919799998352",
+  familyBrideDisplay: "+91 97999 98352",
+  eventPhone: "+919829172048",
+  eventDisplay: "+91 98291 72048"
+};
+document.getElementById("brideName").textContent = weddingDetails.bride;
+document.getElementById("groomName").textContent = weddingDetails.groom;
+document.getElementById("heroVenue").textContent = weddingDetails.venueShort;
+document.getElementById("venueName").textContent = weddingDetails.venueName;
+document.getElementById("venueAddress").textContent = weddingDetails.venueAddress;
+document.getElementById("mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(weddingDetails.mapQuery);
+const date = new Date(weddingDetails.weddingDate);
+document.getElementById("weddingDateText").textContent = date.toLocaleDateString("en-IN",{day:"2-digit",month:"long",year:"numeric"}).toUpperCase();
+function updateCountdown(){
+ const diff = date.getTime() - Date.now();
+ if(diff <= 0){["days","hours","minutes","seconds"].forEach(id=>document.getElementById(id).textContent="00");return;}
+ const d=Math.floor(diff/86400000), h=Math.floor(diff%86400000/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000);
+ document.getElementById("days").textContent=String(d).padStart(3,"0");
+ document.getElementById("hours").textContent=String(h).padStart(2,"0");
+ document.getElementById("minutes").textContent=String(m).padStart(2,"0");
+ document.getElementById("seconds").textContent=String(s).padStart(2,"0");
+}
+updateCountdown();setInterval(updateCountdown,1000);
+
+const intro=document.getElementById("intro"), envelope=document.getElementById("envelope"), invitation=document.getElementById("invitation");
+const bgMusic=document.getElementById("bgMusic");
+bgMusic.volume=0.28;
+document.getElementById("openInvite").addEventListener("click",()=>{
+ if(intro.classList.contains("leaving"))return;
+ envelope.classList.add("open");
+ bgMusic.play().catch(()=>{});
+ setTimeout(()=>{intro.classList.add("leaving");invitation.classList.add("visible");document.body.style.overflow="";window.scrollTo({top:0,behavior:"smooth"});startPetals();},850);
+});
+function startPetals(){
+ const symbols=["✿","❀","✽","❋","❁"];
+ for(let i=0;i<22;i++) setTimeout(()=>{
+  const p=document.createElement("span");p.className="petal";p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  p.style.left=Math.random()*100+"vw";p.style.fontSize=(10+Math.random()*14)+"px";
+  p.style.setProperty("--drift",(Math.random()*180-90)+"px");p.style.animationDuration=(8+Math.random()*9)+"s";
+  document.body.appendChild(p);setTimeout(()=>p.remove(),18000);
+ },i*230);
+ setInterval(()=>{
+  const p=document.createElement("span");p.className="petal";p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  p.style.left=Math.random()*100+"vw";p.style.fontSize=(10+Math.random()*14)+"px";
+  p.style.setProperty("--drift",(Math.random()*180-90)+"px");p.style.animationDuration=(9+Math.random()*8)+"s";
+  document.body.appendChild(p);setTimeout(()=>p.remove(),18000);
+ },850);
+}
+</script>
+</body>
+</html>
